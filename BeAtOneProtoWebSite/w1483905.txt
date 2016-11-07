@@ -1,0 +1,1594 @@
+﻿
+Evan O. Raynolds
+w1483905
+Web Development Courswork
+14/12/2015
+
+
+
+https://w1483905.users.ecs.westminster.ac.uk/ecmm703.1/WebDev2015.16/CWFinalDraft/FINAL/HomePage.php
+
+
+HomePage.php
+<!--HomePage-->
+<!--Some images provided by Google Images, and Bootstrap code capabilities acquired from w3schools.com-->
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The Wellness Center</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./styleSheetWebDevCW.css" >
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container text-left">
+        <h1 class="opaqueTitle">Be at One</h1>
+        <p>Mind, Body & Spirit</p>
+      </div>
+    </div>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid" >
+       <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapseNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"><img src="Logo.jpg" /></a>
+        </div>
+        <div class="navbar-collapse collapse " id="collapseNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="./HomePage.php">Home</a></li>
+            <li><a href="./aboutUs.php">About Us</a></li>
+            <li><a href="./courseListPageCW.php">Courses</a></li>
+
+            <li><a href="./quizPageCW.php">Quiz</a></li>
+            <li><a href="./contactPageCW.php">Contact</a></li>
+            <li><span id="menuOption"></span></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <?php
+            if ($_SESSION['user'] == 1)
+              {
+              ?>
+              <li><a href="./RegistrationPageCW.php">Register</a></li>
+              <li><a href="./testimonial.php">Write a Testimonial</a></li>
+            <li ><a href="./logOut.php"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+            <?php
+          }else{
+            ?>
+            <li><a href="./logIn.php" ><span class="glyphicon glyphicon-user"></span> Log in </a></li>
+            <li><a href="./signUp.php">Sign up</a></li>
+          <?php
+        }
+        ?>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section>
+      <div class="bigTitle">
+        <h3>Our Mission</h3>
+          <p>At the Wellness Institute, our ambition is to cleanse the world of
+             negative energy beginning with the self. We are here to guide our
+             pupils in developing peace of mind and inner tranquility. We
+             believe in focused methods and rigorous self-examination sessions
+             to bring about true enlightenment. We offer our services for the
+             betterment of society and self. We are here to help guide you to
+             a more peacefully and content coexistence. Won't you come and join
+             us today?
+          </p>
+      </div>
+      <br>
+      <br>
+      <div class="pics">
+        <img  src="meditate.jpg">
+        <img  src="warrior.jpg">
+        <img   src="nature.jpg">
+      </div>
+    </section>
+    <br>
+    <br>
+
+    <footer class="footer">
+      <p>Copyright The Wellness Center Ltd.</p>
+    </footer>
+  </body>
+</html>
+
+
+aboutUs.php
+<!--About Us Page-->
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The Wellness Center</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./styleSheetWebDevCW.css" >
+    <script src="testimonial.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container text-left">
+        <h1 class="opaqueTitle">Be at One</h1>
+        <p>Mind, Body & Spirit</p>
+      </div>
+    </div>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid" >
+       <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapseNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"><img src="Logo.jpg" /></a>
+        </div>
+        <div class="navbar-collapse collapse " id="collapseNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="./HomePage.php">Home</a></li>
+            <li class="active"><a href="./aboutUs.php">About Us</a></li>
+            <li><a href="./courseListPageCW.php">Courses</a></li>
+
+            <li><a href="./quizPageCW.php">Quiz</a></li>
+            <li><a href="./contactPageCW.php">Contact</a></li>
+            <li><span id="menuOption"></span></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <?php
+            if ($_SESSION['user'] == 1)
+              {
+              ?>
+              <li><a href="./RegistrationPageCW.php">Register</a></li>
+            <li><a href="./testimonial.php">Write a testimonial</a></li>
+
+            <li ><a href="./logOut.php"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+            <?php
+          }else{
+            ?>
+            <li><a href="./logIn.php" ><span class="glyphicon glyphicon-user"></span> Log in </a></li>
+            <li><a href="./signUp.php">Sign up</a></li>
+          <?php
+        }
+        ?>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <
+      <div class="text-center">
+        <h3 class="bigTitle">Here is what our clientele think.</h3>
+          <?php
+          //while($row=mysqli_fetch_array($result)){
+
+            echo $row['testimonial'];
+          //}
+          ?>
+          <p id="testim"></p>
+      </div>
+    <br>
+    <br>
+
+    <!--<footer class="footer">
+      copyright The Wellness Institute Ltd.
+    </footer>-->
+  </body>
+</html>
+
+
+courseListPageCW.php
+<!--Course List Page-->
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <title>Course List</title>
+    <link rel="stylesheet" type="text/css" href="./styleSheetWebDevCW.css" >
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container text-left">
+        <h1 class=opaqueTitle>Be at One</h1>
+        <p >Mind, Body & Spirit</p>
+      </div>
+    </div>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid" >
+       <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"><img src="Logo.jpg" /></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="./HomePage.php">Home</a></li>
+            <li><a href="./aboutUs.php">About Us</a></li>
+            <li class="active"><a href="./courseListPageCW.php">Courses</a></li>
+
+            <li><a href="./quizPageCW.php">Quiz</a></li>
+            <li><a href="./contactPageCW.php">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <?php
+            if ($_SESSION['user'] == 1)
+              {
+              ?>
+              <li><a href="./RegistrationPageCW.php">Register</a></li>
+              <li><a href="./testimonial.php">Write a Testimonial</a></li>
+
+            <li id="visibleLogIn"><a href="./logIn.php" action="logOut.php"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+
+            <?php
+          }else{
+            ?>
+            <li><a href="./logIn.php" ><span class="glyphicon glyphicon-user"></span> Log in </a></li>
+            <li><a href="./signUp.php">Sign up</a></li>
+          <?php
+        }
+        ?>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <h1 class="bigTitle" >View our List of Courses</h1><br>
+    <table class="center" >
+      <tr>
+        <th>Course</th>
+        <th>Code</th>
+        <th>Descritpion</th>
+        <th>Cost</th>
+        <th>Dates</th>
+      </tr>
+      <tr>
+        <td>Finding the Beauty Within</td>
+        <td>MBS406</td>
+        <td>We all possess an inner beauty attainable through self-reflection
+        and outward positivity.  In this session, we will guide you in discovering
+        your inner beauty that can be projected outwards, leading to a love and
+        acceptance all percieved flaws.</td>
+        <td>$2,500</td>
+        <td>11/11/16</td>
+      </tr>
+      <tr>
+        <td>Peace and Tranquility of Mind</td>
+        <td>MBS508</td>
+        <td>Distraction of the mind leave us lost and without a clear path forward.
+        In this session we will examine how to best to free ourselves from
+        thoughts of things for which we have no control. Our goal is to teach one
+        how best to manage expectations and abilities so that one can be
+        free from harmful and destructive ideas</td>
+        <td>$3,250</td>
+        <td>12/3/16</td>
+      </tr>
+      <tr>
+        <td>Meditation for Beginners</td>
+        <td>MBS405</td>
+        <td>Our renowned mediations session begins with our course for beginners
+        where we learn about the principles and techniques of meditation.  We
+        guide our pupils in meditation session in which we discuss the best ways
+        to clear ones mind and focus on the present moment.</td>
+        <td>$1,200</td>
+        <td>01/08/16</td>
+      </tr>
+      <tr>
+        <td>Intermediate Meditation</td>
+        <td>MBS503</td>
+        <td>In this session, we build upon the practices learned in our beginner
+        course, and we develop the ideas to incorporate mindful thinking.  We
+        meditate regularly during these sessions as we focus our energies on our
+        mind and how to be the best person we can be, ever aware of the present.
+        </td>
+        <td>$2,000</td>
+        <td>11/08/16</td>
+      </tr>
+      <tr>
+        <td>Advanced Meditation</td>
+        <td>MBS608</td>
+        <td>Our Advanced Meditation sessions focus on the body as well as the mind.
+        We develop our meditation techniques in order to better understand and
+        control our emotions. Pupils in these sessions have been known to become
+        so very much at one in the present moment that they can even slow the beating
+        of their heart and raise or lower their body temperature.  With great focus and
+        mindfulness, all things are possible.</td>
+        <td>$4,000</td>
+        <td>22/08/16</td>
+      </tr>
+      <tr>
+        <td>Master of Mind, Body and Spirit</td>
+        <td>MBS609</td>
+        <td>Here, we lead our pupils to mastery of the mind, body and spirit.
+        This encompasses acknowledgment and awareness of the energy surrounding
+        the individual at all times, both from others and from the self.  A certain
+        control of ones emotions and thoughts will be harnessed so as to best
+        represent the peaceful and empathetic nature in which we should all live.</td>
+        <td>$4,250</td>
+        <td>24/12/16</td>
+      </tr>
+      <tr>
+        <td>Being at One With All</td>
+        <td>MBS711</td>
+        <td>We are reborn in the light.  Rays of warmth flow across us.  We feel
+        and exude an energy like no other.  Harmony between the self and all
+        living things fills our spirit with a stoic wisdom.  Compassion and love
+        are our gifts.  We feel everything, the good, the bad, the beauty in finality.
+        We are one, we are at peace. Oh yeah, and we can move things with our mind!</td>
+        <td>$5,000</td>
+        <td>15/03/17</td>
+      </tr>
+    </table>
+    <hr>
+  <footer class="footer">The Wellness Institute Ltd.</footer>
+  </body>
+</html>
+
+
+quizPageCW.php
+<!--Quiz Page-->
+<?php
+session_start();
+?>
+<!DoCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Quiz!</title>
+    <link rel="stylesheet" type="text/css" href="./styleSheetWebDevCW.css" >
+    <script src="quizJQuery.js"></script>
+    <script>  var answerArray = [];
+      var questionArray = ["To what does 'spirituality' refer", "How many noble truths are there?",
+      "What is the goal of meditation?", "What is the best way to meditate?", "What is nirvana?", "What is karma?",
+      "What is the most effect breathing technique?", "What is the number one cause of stress?"];
+      var correctAnswer = ["An insatiable desire that we all possess, and how we cope with it", "4", "All of the above",
+      "Whichever method works best for the individual", "A transcendent state in which there is neither suffering nor desire",
+      "The total of one's actions in this and all previous lives", "Diaphragmatic breathing","Work"];
+      var counter = 0;
+      var resultString = "";
+      var total = 0;
+      var br = document.createElement('br');
+      var secs = 0;
+      multiple = 15;
+      var theTimer = setInterval(function(){ timeFun() }, 1000);
+
+      function timeFun(){
+        secs += 1;
+
+        if(secs == multiple){
+          multiple = secs + 15;
+            $($questions.get(nextQ)).fadeOut(function(){
+              nextQ += 1;
+
+              $($questions.get(nextQ)).fadeIn();
+              counter++;
+              if(nextQ == 8){
+                nextQ -= 1;
+              selectAnswer(undefined, undefined);
+              }
+            });
+          }
+        }
+
+      function selectAnswer(ans, frm){
+
+          answerArray[nextQ] = ans;
+
+          if(nextQ == 7){
+
+            for(i = 0; i <= 7; i++){
+
+              resultString +=  "Question " + (i+1) + ") " + questionArray[i] +".\n ";
+
+              if(answerArray[i] == undefined || answerArray[i] == "" || answerArray[i] == "undefined"){
+                resultString += "You did not answer, and therefore";
+              }else{
+               resultString += "You answered \"" + answerArray[i] + "\"";
+             }
+
+              if(answerArray[i] === correctAnswer[i]){
+                resultString += "...you answered correctly. \n\n";
+                total++;
+              }
+              else{
+                resultString += "..you answered incorrectly.\n" +
+                " The correct answer is \"" + correctAnswer[i] + "\". \n\n";
+              }
+            }
+                document.getElementById("results").innerHTML = resultString;
+                document.getElementById("score").innerHTML = ("You scored " + total + "/8");
+                clearInterval(this);
+                document.getElementById("totalTime").innerHTML = ("It took you " +
+                secs + " seconds to complete the quiz.");
+                stopTimer();
+        }
+          multiple = secs + 15;
+      }
+
+      function stopTimer(){
+        clearInterval(theTimer);
+
+      }
+ </script>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container text-left">
+        <h1 class="opaqueTitle">Be at One</h1>
+        <p>Mind, Body & Spirit</p>
+      </div>
+    </div>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+       <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false" aria-controls="navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"><img src="Logo.jpg" /></a>
+        </div>
+
+        <div class="navbar-collapse collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="./HomePage.php">Home</a></li>
+            <li><a href="./aboutUs.php">About Us</a></li>
+            <li><a href="./courseListPageCW.php">Courses</a></li>
+
+            <li class="active"><a href="./quizPageCW.php">Quiz</a></li>
+            <li><a href="./contactPageCW.php">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          <?php
+            if ($_SESSION['user'] == 1)
+              {
+              ?>
+              <li><a href="./RegistrationPageCW.php">Register</a></li>
+              <li><a href="./testimonial.php">Write a Testimonial</a></li>
+            <li id="visibleLogIn"><a href="./logIn.php" action="logOut.php"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+
+            <?php
+          }else{
+            ?>
+            <li><a href="./logIn.php" ><span class="glyphicon glyphicon-user"></span> Log in </a></li>
+            <li><a href="./signUp.php">Sign up</a></li>
+          <?php
+        }
+        ?>
+        </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2"></div>
+
+      <div class="col-sm-8">
+
+        <h1 class="bigTitle">Take a sample quiz relating to one of our sessions</h1>
+          <p id="totalTime">You have 15 seconds for each question</p>
+          <h2 id="score"></h2>
+        <form>
+          <ul class="quiz">
+            <div class="question">
+            <h2 class="allQuests">To what does "spirituality" refer?</h2>
+            <li>
+              <input class="chooseAnswer" onClick="selectAnswer(ans1a.value, this.form);" id="ans1a" type="button" name="ans1" value="A religious belief">
+              <input class="chooseAnswer" onClick="selectAnswer(ans1b.value, this.form);" id="ans1b" type="button" name="ans1" value="An insatiable desire that we all possess, and how we cope with it">
+              <input class="chooseAnswer" onClick="selectAnswer(ans1c.value, this.form);" id="ans1c" type="button" name="ans1" value="A feeling of connection for with things and poeple around you">
+              <input class="chooseAnswer" onClick="selectAnswer(ans1d.value, this.form);" id="ans1d" type="button" name="ans1" value="An etheral being that has transcended this plain of existance into that which we refer to as nirvana">
+            </li>
+          </div>
+        </form>
+        <form>
+          <div class="question">
+            <h2 class="allQuests">How many noble truths are there?</h2>
+            <li>
+              <input class="chooseAnswer" onClick="selectAnswer(ans2a.value, this.form);" id="ans2a" type="button" name="ans2" value="7">
+              <input class="chooseAnswer" onClick="selectAnswer(ans2b.value, this.form);" id="ans2b" type="button" name="ans2" value="2">
+              <input class="chooseAnswer" onClick="selectAnswer(ans2c.value, this.form);" id="ans2c" type="button" name="ans2" value="5">
+              <input class="chooseAnswer" onClick="selectAnswer(ans2d.value, this.form);" id="ans2d" type="button" name="ans2" value="4">
+            </li>
+          </div>
+        </form>
+        <form>
+          <div class="question">
+            <h2 class="allQuests">What is the goal of meditation?</h2>
+            <li>
+              <input class="chooseAnswer" onClick="selectAnswer(ans3a.value, this.form);" id="ans3a" type="button" name="ans3" value="To empty the mind of all distractions">
+              <input class="chooseAnswer" onClick="selectAnswer(ans3b.value, this.form);" id="ans3b" type="button" name="ans3" value="To obtain a level of self-awareness">
+              <input class="chooseAnswer" onClick="selectAnswer(ans3c.value, this.form);" id="ans3c" type="button" name="ans3" value="To explore beyond the depths of habituated thinking">
+              <input class="chooseAnswer" onClick="selectAnswer(ans3d.value, this.form);" id="ans3d" type="button" name="ans3" value="All of the above">
+            </li>
+          </div>
+        </form>
+        <form>
+          <div class="question">
+            <h2 class="allQuests">What is the best way to meditate?</h2>
+            <li>
+              <input class="chooseAnswer" onClick="selectAnswer(ans4a.value, this.form);" id="ans4a" type="button" name="ans4" value="Sitting cross-legged with your eyes closed">
+              <input class="chooseAnswer" onClick="selectAnswer(ans4b.value, this.form);" id="ans4b" type="button" name="ans4" value="Lying down with your face to the ground">
+              <input class="chooseAnswer" onClick="selectAnswer(ans4c.value, this.form);" id="ans4c" type="button" name="ans4" value="Standing on one leg with your arms outstretched">
+              <input class="chooseAnswer" onClick="selectAnswer(ans4d.value, this.form);" id="ans4d" type="button" name="ans4" value="Whichever method works best for the individual">
+            </li>
+          </div>
+        </form>
+        <form>
+          <div class="question">
+            <h2 class="allQuests">What is Nirvana?</h2>
+            <li>
+              <input class="chooseAnswer" onClick="selectAnswer(ans5a.value, this.form);" id="ans5a" type="button" name="ans5" value="Heaven">
+              <input class="chooseAnswer" onClick="selectAnswer(ans5b.value, this.form);" id="ans5b" type="button" name="ans5" value="A '80's grunge rock band">
+              <input class="chooseAnswer" onClick="selectAnswer(ans5c.value, this.form);" id="ans5c" type="button" name="ans5" value="Paradise">
+              <input class="chooseAnswer" onClick="selectAnswer(ans5d.value, this.form);" id="ans5d" type="button" name="ans5" value="A transcendent state in which there is neither suffering nor desire">
+            </li>
+          </div>
+        </form>
+        <form>
+          <div class="question">
+            <h2 class="allQuests">What is karma?</h2>
+            <li>
+              <input class="chooseAnswer" onClick="selectAnswer(ans6a.value, this.form);" id="ans6a" type="button" name="ans6" value="A tasty gooey substance used in candy bars">
+              <input class="chooseAnswer" onClick="selectAnswer(ans6b.value, this.form);" id="ans6b" type="button" name="ans6" value="One's moral standing with their god">
+              <input class="chooseAnswer" onClick="selectAnswer(ans6c.value, this.form);" id="ans6c" type="button" name="ans6" value="The total of one's actions in this and all previous lives">
+              <input class="chooseAnswer" onClick="selectAnswer(ans6d.value, this.form);" id="ans6d" type="button" name="ans6" value="The natural order of things that would happen anyway">
+            </li>
+          </div>
+        </form>
+          <form>
+          <div class="question">
+            <h2 class="allQuests">What is the most effective breathing technique?</h2>
+            <li>
+              <input class="chooseAnswer" onClick="selectAnswer(ans7a.value, this.form);" id="ans7a" type="button" name="ans7" value="From the upper chest">
+              <input class="chooseAnswer" onClick="selectAnswer(ans7b.value, this.form);" id="ans7b" type="button" name="ans7" value="Diaphragmatic breathing">
+              <input class="chooseAnswer" onClick="selectAnswer(ans7c.value, this.form);" id="ans7c" type="button" name="ans7" value="From the belly">
+              <input class="chooseAnswer" onClick="selectAnswer(ans7d.value, this.form);" id="ans7d" type="button" name="ans7" value="Abdominal breathing">
+            </li>
+          </div>
+        </form>
+        <form>
+          <div class="question">
+            <h2 class="allQuests">What is the number one cause of stress?</h2>
+            <li>
+              <input class="chooseAnswer" onClick="selectAnswer(ans8a.value, this.form); stopTimer();" id="ans8a" type="button" name="ans8" value="Work">
+              <input class="chooseAnswer" onClick="selectAnswer(ans8b.value, this.form); stopTimer();" id="ans8b" type="button" name="ans8" value="Money">
+              <input class="chooseAnswer" onClick="selectAnswer(ans8c.value, this.form); stopTimer();" id="ans8c" type="button" name="ans8" value="Relationships">
+              <input class="chooseAnswer" onClick="selectAnswer(ans8d.value, this.form); stopTimer();" id="ans8d" type="button" name="ans8" value="poor nutrition">
+            </li>
+          </div>
+          </form>
+          <textarea id="results" style="height:500px" readonly></textarea>
+          <hr>
+      </div>
+      <div class="col-sm-2"></div>
+  </body>
+</html>
+
+
+quizJQuery.js
+<!--Quiz Jquery-->
+window.answerArray = [];
+window.counter = 0;
+var fullListOfQs = [];
+
+$(document).ready(function(){
+
+  window.totalQs = $('.question').size();
+  window.nextQ = 0;
+  window.$questions = $('.question');
+  $questions.hide();
+
+  $($questions.get(nextQ)).fadeIn();
+
+$('.chooseAnswer').click(function() {
+
+  $($questions.get(nextQ)).fadeOut(function(){
+
+    nextQ += 1;
+    multiple = secs + 15;
+    $($questions.get(nextQ)).fadeIn();
+
+      });
+    });
+  });
+
+contactPageCW.php
+<!--Contact Page-->
+<?php
+session_start();
+?>
+<!Doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <title>Contact US</title>
+    <link rel="stylesheet" type="text/css" href="./styleSheetWebDevCW.css" >
+    <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <script>
+
+      function submitQuery(frm){
+
+        var firstName = frm.firstName.value;
+        var surname = frm.surname.value;
+        var email = frm.email.value;
+        var title = document.getElementById("title").value;
+        var emailVerify = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
+        if((email == "" || !emailVerify.test(email)))
+        {
+          alert("The email address you have entered is invalid.")
+        }else{
+
+      if(firstName != "" && surname != "" && email != ""){
+        if(title != "selectOne"){
+          alert("Thank you, " + title + " " + firstName + " " +
+          surname + ", for your input. We will respond to you shortly at " + email);
+        }else{alert("Thank you, " + firstName + " " +
+          surname + ", for your input. We will respond to you shortly at " + email);
+        }
+      }else{alert("You must fill in the required fields.");
+    }
+  }
+  }
+
+  function storeClientInfo(frm){
+
+    localStorage.frstNm = frm.firstName.value;
+    localStorage.srnm = frm.surname.value;
+    localStorage.eml = frm.email.value;
+
+
+  }
+
+  function loadClientInfo() {
+
+    if(localStorage.frstNm || localStorage.eml || localStorage.srnm ){
+    document.getElementById("firstName").value = localStorage.frstNm;
+    document.getElementById("surname").value = localStorage.srnm;
+    document.getElementById("email").value = localStorage.eml;
+
+    }
+  }
+    </script>
+  </head>
+  <body onLoad="loadClientInfo();">
+    <div class="jumbotron">
+      <div class="container text-left">
+        <h1 class="opaqueTitle">Be at One</h1>
+        <p>Mind, Body & Spirit</p>
+      </div>
+    </div>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+       <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"><img src="Logo.jpg" /></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li ><a href="./HomePage.php">Home</a></li>
+            <li><a href="./aboutUs.php">About Us</a></li>
+            <li><a href="./courseListPageCW.php">Courses</a></li>
+
+            <li><a href="./quizPageCW.php">Quiz</a></li>
+            <li class="active"><a href="./contactPageCW.php">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <?php
+            if ($_SESSION['user'] == 1)
+              {
+              ?>
+              <li><a href="./RegistrationPageCW.php">Register</a></li>
+            <li><a href="./testimonial.php">Write a testimonial</a></li>
+            <li><a href="./logOut.php"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+
+            <?php
+          }else{
+            ?>
+            <li><a href="./logIn.php" ><span class="glyphicon glyphicon-user"></span> Log in </a></li>
+            <li><a href="./signUp.php">Sign up</a></li>
+          <?php
+        }
+        ?>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <p class="bigTitle">Please contact us by email, and we will get back to you at the earliest convenience</p>
+    <form>
+        <p>Your Name</p>
+        <label>Title</label><br>
+        <select id="title">
+          <option value="selectOne" >Select one</option>
+          <option value="Mrs.">Mrs.</option>
+          <option value="Ms.">Ms.</option>
+          <option value="Miss">Miss</option>
+          <option value="Mr.">Mr.</option>
+          <option value="Dr.">Dr.</option>
+          <option value="other">other</option>
+        </select>
+          <br>
+        <label for="firstName" id="firstName" required>First Name(s):<span class="asterisk">*</span></label><br>
+          <input id="firstName" onChange="storeClientInfo(this.form);" name="firstName" type="text" size="60" placeholder="Please, enter your first name." autofocus required><br>
+
+        <label for="surname" id="surname">Surname:<span class="asterisk">*</span></label><br>
+          <input id="surname" onChange="storeClientInfo(this.form);" name="surname" type="text" size="60" placeholder="Please, enter your surname." required><br><br>
+
+        <p>Contact Details</p>
+        <label for"houseNumber">House Number:</label><br>
+          <input id="houseNumber" type="text" size="60" placeholder="Please, enter your address."><br>
+
+        <label for"streetName">Street Name:</label><br>
+          <input id="streetName" type="text" size="60" ><br>
+
+        <label for"city">Town/City:</label><br>
+          <input id="city" type="text" size="60"><br>
+
+        <label for"areaCode">Area Code:</label><br>
+          <input id="areaCode" type="text" size="60" ><br>
+
+        <label for="email" required>Email:<span class="asterisk">*</span></label><br>
+          <input name="email" onChange="storeClientInfo(this.form);" id="email" type="email" size="60" placeholder="Please, enter e-mail address."  required><br>
+
+        <label for="phone">Tel:</label><br>
+          <input id="phone" type="tel" size="60" placeholder="Please, enter your telephone number."><br><br>
+
+        <p>Let us know how we can help.</p>
+        <textarea placeholder="Enter your query or comment here." rows="5" cols="60"></textarea>
+        <br>
+        <br>
+        <br>
+        </div>
+    </div>
+  </div>
+      <div class="col-sm-2"></div>
+      <button class="funButtons" value="submitQuery" type="submit" onClick="submitQuery(this.form); clearStored();" action="mailto:w1483905@my.westminster.ac.uk">Submit</button>
+    </form>
+    <br>
+    <footer class="footer">The Wellness Institute Ltd.</footer>
+  </body>
+</html>
+
+
+logIn.php
+<!--Log In Page-->
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./styleSheetWebDevCW.css" >
+    <title>Login</title>
+    <script src="logInUser.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  </head>
+<body>
+  <div class="jumbotron">
+    <div class="container text-left">
+      <h1 class="opaqueTitle">Be at One</h1>
+      <p>Mind, Body & Spirit</p>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid" >
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapseNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand"><img src="Logo.jpg" /></a>
+      </div>
+      <div class="navbar-collapse collapse " id="collapseNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="./HomePage.php">Home</a></li>
+          <li><a href="./aboutUs.php">About Us</a></li>
+          <li><a href="./courseListPageCW.php">Courses</a></li>
+
+          <li><a href="./quizPageCW.php">Quiz</a></li>
+          <li><a href="./contactPageCW.php">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <?php
+          if ($_SESSION['user'] == 1)
+            {
+            ?>
+            <li><a href="./RegistrationPageCW.php">Register</a></li>
+            <li><a href="./testimonial.php">Write a testimonial</a></li>
+          <li id="visibleLogIn"><a href="./logOut.php"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+
+          <?php
+        }else{
+          ?>
+          <li><a href="./logIn.php" ><span class="glyphicon glyphicon-user"></span> Log in </a></li>
+          <li><a href="./signUp.php">Sign up</a></li>
+        <?php
+      }
+      ?>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+  <h1 class="bigTitle">Login Page</h1>
+  <form name="form1" method="post" action="runOnce.php" autocomplete="off">
+    <table>
+      <tr>
+        <td width="78">Username</td>
+        <td width="294"><input name="myusername" type="text" id="myusername" autocomplete="off"></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input name="mypassword" type="password" id="mypassword" autocomplete="off"></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input class="funButtons" type="submit" name="Submit" value="Login"></td>
+      </tr>
+    </table>
+  </form>
+  </div>
+  <div class="col-sm-2"></div>
+  <hr>
+  <!--<footer class="footer">The Wellness Institute Ltd.</footer>-->
+  </body>
+</html>
+
+db_connect.php
+<!--Database Connection-->
+<?php 
+//db_connect.php
+// Set database access info 
+DEFINE ('DB_HOST','elephant.ecs.westminster.ac.uk');
+DEFINE ('DB_USER', 'w1483905'); 
+DEFINE ('DB_PASSWORD', 'OhDctKaKApkL'); 
+DEFINE ('DB_NAME', 'w1483905_0'); 
+// Make connection
+$conn=@mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+   if (!$conn) {
+   die('Did not connect to MySQL: ' . mysqli_connect_error()); 
+   }
+//select the database
+ mysqli_select_db($conn, DB_NAME);
+?>
+
+runOnce.php
+<!--Run through Database-->
+<?php
+//runonce.php - run this script only once!
+ob_start();
+//establish a connection to the Database
+require_once('db_connect.php');
+//create query
+$q="CREATE TABLE admin1 (ID int NOT NULL AUTO_INCREMENT, PRIMARY KEY(ID), username varchar(20), password varchar(40), testimonial varchar(70))";
+//execute query
+$result=@mysqli_query($conn, $q);
+//populate the table
+$userName=$_REQUEST['myusername'];
+$userPass=$_REQUEST['mypassword'];
+$qinsert = "INSERT INTO admin1 (username, password) VALUES ('{$userName}','{$userPass}')";
+mysqli_query($conn, $qinsert);
+$fname=$_POST['myusername'];
+$fpassword=$_POST['mypassword'];
+$sql="SELECT * FROM admin1 WHERE username='$fname' AND password='$fpassword'";
+$result=mysqli_query($conn, $sql);
+
+while ($row=mysqli_fetch_array($result)){
+if($row['username'] == $fname && $row['password'] == $fpassword) {
+  session_start();
+  $_SESSION['user']=1;
+header ("Location: HomePage.php");
+exit();
+}
+}
+/*if(!isset($_SESSION['user'])){
+header("Location: signUp.php");
+exit();
+  }*/
+
+//check that the table exists by printing the contents – for testing purposes only!
+/*$query="SELECT * FROM admin1";
+$result=mysqli_query($conn, $query);
+while ($row=mysqli_fetch_array($result)){
+echo $row['username'].'-'.$row['password'];
+echo '<br>';
+}*/
+ob_end_flush();
+?>
+
+
+logOut.php
+<!--End Connection-->
+<?php
+ob_start();
+session_start();
+session_destroy();
+header("Location: HomePage.php");
+ob_end_flush();
+?>
+
+
+signUp.php
+<!--Sign In Page-->
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./styleSheetWebDevCW.css" >
+    <title>Sign up</title>
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+<body>
+  <div class="jumbotron">
+    <div class="container text-left">
+      <h1 class="opaqueTitle">Be at One</h1>
+      <p>Mind, Body & Spirit</p>
+    </div>
+  </div>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid" >
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapseNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand"><img src="Logo.jpg" /></a>
+      </div>
+      <div class="navbar-collapse collapse " id="collapseNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="./HomePage.php">Home</a></li>
+          <li><a href="./aboutUs.php">About Us</a></li>
+          <li><a href="./courseListPageCW.php">Courses</a></li>
+
+          <li><a href="./quizPageCW.php">Quiz</a></li>
+          <li><a href="./contactPageCW.php">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <?php
+          if ($_SESSION['user'] == 1)
+            {
+            ?>
+
+          <li id="visibleLogIn"><a href="./logIn.php" action="logOut.php"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+
+          <?php
+        }else{
+          ?>
+          <li><a href="./logIn.php" ><span class="glyphicon glyphicon-user"></span> Log in </a></li>
+          <li class="active"><a href="./signUp.php">Sign up</a></li>
+        <?php
+      }
+      ?>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+  <h1 class="opaqueTitle">Sign up</h1>
+  <form name="form1" method="post" action="runOnce.php" autocomplete="off">
+  <table>
+  <tr>
+    <td width="78">First Name</td>
+    <td width="294"><input name="fName" type="text" id="fName"></td>
+  </tr>
+  <tr>
+    <td width="78">Surname</td>
+    <td width="294"><input name="lName" type="text" id="lName"></td>
+  </tr>
+  <tr>
+    <td width="78">Username</td>
+    <td width="294"><input name="myusername" type="text" id="myusername"></td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td><input name="mypassword" type="password" id="mypassword"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input class="funButtons" type="submit" name="Submit" value="Register"></td>
+  </tr>
+  </table>
+  </form>
+</div>
+  <div class="col-sm-2"></div>
+  <!--<footer class="footer">The Wellness Institute Ltd.</footer>-->
+  </body>
+</html>
+
+
+
+RegistrationPageCW.php
+<!--Registration Page-->
+<?php
+session_start();
+?>
+<!Doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Register for a Course!</title>
+    <link rel="stylesheet" type="text/css" href="./styleSheetWebDevCW.css" >
+    <script>
+
+      function validate(crs, frm){
+
+        var firstName = frm.firstName.value;
+        var surname = frm.surname.value;
+        var email = frm.email.value;
+        var emailVerify = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+        var code = frm.promoCode.value;
+
+        if(email == ""){
+        document.getElementById('e-mail').innerHTML = 'Please, enter your email address';
+        document.regForm.email.focus();
+      }else if(!email.match(emailVerify)){
+        document.getElementById('e-mail').innerHTML = "Please, enter a valid email";
+        document.regForm.email.focus();
+      }else{
+          document.getElementById('e-mail').innerHTML = '';
+        }
+
+        if(surname == ""){
+        document.getElementById('surname').innerHTML = 'Please, enter your surname';
+        document.regForm.surname.focus();
+        } else{
+        document.getElementById('lName').innerHTML = '';
+        }
+
+        if(firstName == ""){
+        document.getElementById('fNameEmpty').innerHTML = 'Please, enter your name';
+        document.regForm.firstName.focus();
+        }else{
+          document.getElementById('fNameEmpty').innerHTML = '';
+        }
+
+        if(crs == "Select One"){
+        document.getElementById('courseEmpty').innerHTML = 'Please, select a course';
+        document.regForm.course.focus();
+        }else{
+          document.getElementById('courseEmpty').innerHTML = '';
+        }
+
+        /*if((code != "bonus" || code != "Bonus") && code != "" ){
+        document.getElementById('promoCode').innerHTML = 'Invalid code';
+        document.regForm.promoCode.focus();
+      }*/
+
+        if((email == "" || !emailVerify.test(email))
+         || surname == "" || firstName == "" || crs == "Select One"){
+          return false;
+        }else{
+        document.forms["regForm"].submit();
+      }
+}
+
+    function storeClientInfo(frm){
+
+      localStorage.frstNm = frm.firstName.value;
+      localStorage.srnm = frm.surname.value;
+      localStorage.eml = frm.email.value;
+
+    }
+
+    function loadClientInfo() {
+
+      if(localStorage.frstNm || localStorage.eml || localStorage.srnm ){
+      document.getElementById("firstName").value = localStorage.frstNm;
+      document.getElementById("surname").value = localStorage.srnm;
+      document.getElementById("email").value = localStorage.eml;
+
+      }
+    }
+
+    function clearStored(){
+      localStorage.frstNm = "";
+      localStorage.srnm = "";
+      localStorage.eml = "";
+    }
+    </script>
+  </head>
+  <body onLoad="loadClientInfo();">
+    <div class="jumbotron">
+      <div class="container text-left">
+        <h1 class="opaqueTitle">Be at One</h1>
+        <p>Mind, Body & Spirit</p>
+      </div>
+    </div>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid" >
+       <div class="navbar-header">
+        <button type="button" data-toggle="collapse" data-target="#myNavbar" class="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"><img src="Logo.jpg" /></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="./HomePage.php">Home</a></li>
+            <li><a href="./aboutUs.php">About Us</a></li>
+            <li><a href="./courseListPageCW.php">Courses</a></li>
+            <li><a href="./quizPageCW.php">Quiz</a></li>
+            <li><a href="./contactPageCW.php">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <?php
+            if ($_SESSION['user'] == 1)
+              {
+              ?>
+              <li class="active"><a href="./RegistrationPageCW.php">Register</a></li>
+              <li><a href="./testimonial.php">Write a Testimonial</a></li>
+            <li><a href="./logOut.php"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+
+            <?php
+          }else{
+            ?>
+            <li><a href="./logIn.php" ><span class="glyphicon glyphicon-user"></span> Log in</a></li>
+            <li><a href="./signUp.php">Sign up</a></li>
+          <?php
+        }
+        ?>
+        </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+
+    <h1 class="bigTitle">Register for one of our courses</h1>
+    <form name="regForm" action="./regPageCW.php" method="post">
+
+      <fieldset>
+        <legend>Course Details</legend>
+          <label class="labelTitle">Course&nbsp;&nbsp;<span class="reqText" id="courseEmpty"></span><span class="asterisk">*</span></label>
+
+          <select id="course" name="course">
+            <option>Select One</option>
+            <option>MBS406:Finding the Beauty Within</option>
+            <option>MBS508:Peace and Tranquility of Mind</option>
+            <option>MBS405:Meditation for Beginners</option>
+            <option>MBS503:Intermediate Meditation</option>
+            <option>MBS608:Advanced Meditation</otpion>
+            <option>MBS609:Masterof Mind, Body and Spirit</option>
+            <option>MBS711:Being at One With All</option>
+          </select>
+        <br>
+
+        <label for="dateOfCourse" class="labelTitle">Date<span class="asterisk">*</span></label>
+          <input id="dateOfCourse" name="date" type="date" placeholder="Choose a date"><br>
+        <label for="promotion" class="labelTitle">Promotion Code&nbsp;<span id="promoCod"></span></label>
+          <input id="promotion" type="text" name="promoCode" placeholder="Enter a promotion code"><span class="reqText" id="promoCode"></span>
+      </fieldset>
+        <br>
+        <br>
+      <fieldset>
+        <legend>Applicant Details</legend>
+        <label class="labelTitle">Title</label><br>
+        <select id="title" name="title">
+          <option value="selectOne" >Select one</option>
+          <option value="Mrs.">Mrs.</option>
+          <option value="Ms.">Ms.</option>
+          <option value="Miss">Miss</option>
+          <option value="Mr.">Mr.</option>
+          <option value="Dr.">Dr.</option>
+          <option value="other">other</option>
+        </select><br>
+
+        <label for="firstName" class="labelTitle">First Name&nbsp;&nbsp;<span class="reqText" id="fNameEmpty"></span><span class="asterisk">*</span></label>
+          <input id="firstName" onChange="storeClientInfo(this.form);" class="storeData" name="firstName" type="text" placeholder="Enter your first name" value=""><br>
+        <label for="surname" class="labelTitle">Surname&nbsp;&nbsp;<span class="reqText" id="lName"></span><span class="asterisk">*</span></label>
+          <input id="surname"  onChange="storeClientInfo(this.form);" class="storeData" name="surname" type="text" placeholder="Enter your last name" value=""><br>
+        <label for="email" class="labelTitle">Email&nbsp;&nbsp;<span class="reqText" id="e-mail"></span><span class="asterisk">*</span></label>
+          <input id="email" onChange="storeClientInfo(this.form);" class="storeData" name="email" type="email" placeholder="Enter your email address" value="">
+      </fieldset>
+      <br>
+      <input class="funButtons" type="button" value="Confirm registration" onClick="validate(course.value, this.form); clearStored();">
+    </form>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+    </div>
+    <br>
+    <hr>
+    <footer class="footer">
+    The Wellness Institute Ltd.
+    </footer>
+  </body>
+</html>
+
+
+
+regPageCW.php
+<!--Registration Page Con.-->
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Confirmation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="./styleSheetWebDevCW.css" >
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container text-left">
+        <h1>Be at One</h1>
+        <p>Mind, Body & Spirit</p>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-inverse">
+
+       <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"><img src="Logo.jpg" /></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="./HomePage.php">Home</a></li>
+            <li><a href="./aboutUs.php">About Us</a></li>
+            <li><a href="./courseListPageCW.php">Courses</a></li>
+
+            <li><a href="./quizPageCW.php">Quiz</a></li>
+            <li><a href="./contactPageCW.php">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <?php
+            if ($_SESSION['user'] == 1)
+              {
+              ?>
+              <li><a class="active" href="./RegistrationPageCW.php">Register</a></li>
+              <li><a href="./testimonial.php">Write a Testimonial</a></li>
+            <li id="visibleLogIn"><a href="./logIn.php" action="logOut.php"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+            <?php
+          }else{
+            ?>
+            <li><a href="./logIn.php" ><span class="glyphicon glyphicon-user"></span> Log in </a></li>
+            <li><a href="./signUp.php">Sign up</a></li>
+          <?php
+        }
+        ?>
+          </ul>
+        </div>
+      <!--</div>-->
+    </nav>
+
+  <?php
+  $course = $_REQUEST['course'];
+  $firstName = $_REQUEST['firstName'];
+  $surname = $_REQUEST['surname'];
+  $email = $_REQUEST['email'];
+  $title = $_REQUEST['title'];
+  $date = $_REQUEST['date'];
+  $code = $_REQUEST['promoCode'];
+  $cost;
+  $discount = 0.05;
+
+
+if($course == "MBS406:Finding the Beauty Within"){
+  $cost = 2500;
+} elseif ($course == "MBS508:Peace and Tranquility of Mind"){
+  $cost = 3250;
+} elseif ($course == "MBS405:Meditation for Beginners"){
+  $cost = 1200;
+} elseif ($course == "MBS503:Intermediate Meditation"){
+  $cost = 2000;
+} elseif ($course == "MBS608:Advanced Meditation"){
+  $cost = 4000;
+} elseif ($course == "MBS609:Master of Mind, Body and Spirit"){
+  $cost = 4250;
+} elseif ($course == "MBS711:Being at One With All"){
+  $cost = 5000;
+}
+
+if($code === "bonus"){
+  $cost = $cost - ($cost* $discount);
+}
+
+if($title == "selectOne"){
+  $title = "";
+}
+  echo "<p> Thank you, $title $firstName $surname, for registering for
+     our course, $course. The total cost comes to $cost. We look forward to meeting you.</p>";
+  ?>
+  </body>
+</html>
+
+
+
+testimonial.php
+<!--Testimonial Page-->
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The Wellness Center</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./styleSheetWebDevCW.css" >
+    <script src="logInUser.js"></script>
+  </head>
+  <body >
+    <div class="jumbotron">
+      <div class="container text-left">
+        <h1 clas="opaqueTitle">Be at One</h1>
+        <p>Mind, Body & Spirit</p>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid" >
+       <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapseNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"><img src="Logo.jpg" /></a>
+        </div>
+        <div class="navbar-collapse collapse " id="collapseNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="./HomePage.php">Home</a></li>
+            <li><a href="./aboutUs.php">About Us</a></li>
+            <li><a href="./courseListPageCW.php">Courses</a></li>
+
+            <li><a href="./quizPageCW.php">Quiz</a></li>
+            <li><a href="./contactPageCW.php">Contact</a></li>
+            <li><span id="menuOption"></span></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <?php
+            if ($_SESSION['user'] == 1)
+              {
+              ?>
+              <li><a href="./RegistrationPageCW.php">Register</a></li>
+            <li class="active"><a href="./testimonial.php">Write a Testimonial</a></li>
+            <li ><a href="./logOut.php"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+            <?php
+          }else{
+            ?>
+            <li><a href="./logIn.php" ><span class="glyphicon glyphicon-user"></span> Log in </a></li>
+            <li><a href="./signUp.php">Sign up</a></li>
+          <?php
+        }
+        ?>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+    <form name="form2" action="validateTestimonial.php" method="post">
+      <div class="text-center">
+        <h1 class="bigTitle">Let us know what you think</h1>
+        <input rows="10" columns="60" name="shareTestimonial" id="shareTestimonial" type="text">
+      <br>
+      <br>
+      <br>
+      <input class="funButtons" type="submit" name="submit" value="Submit">
+      </div>
+    </form>
+
+  </div>
+  <div class="col-sm-2"></div>
+    <br>
+    <br>
+  </section>
+    <!--<footer class="footer">
+       The Wellness Institute Ltd.
+    </footer>-->
+  </body>
+</html>
+
+
+
+validateTestimonial.php
+<!--Validate Testimonial-->
+<?php
+//runonce.php - run this script only once!
+ob_start();
+//establish a connection to the Database
+require_once('db_connect.php');
+//create query
+$q="CREATE TABLE admin1 (ID int NOT NULL AUTO_INCREMENT, PRIMARY KEY(ID), username varchar(20), password varchar(40), testimonial varchar(70))";
+//execute query
+$result=@mysqli_query($conn, $q);
+//populate the table
+$testimonial=$_REQUEST['shareTestimonial'];
+$qinsert = "INSERT INTO admin1 (testimonial) VALUES ('{$testimonial}')";
+mysqli_query($conn, $qinsert);
+$testim=$_POST['shareTestimonial'];
+$sql="SELECT testimonial FROM admin1";
+$result=mysqli_query($conn, $sql);
+while ($row=mysqli_fetch_array($result)){
+  if($row['testimonial'] == $testim) {
+echo $row['testimonial'];
+echo '<br>';
+
+}
+}
+header('Location: aboutUs.php');
+/*$query="SELECT * FROM admin1";
+$result=mysqli_query($conn, $query);
+while ($row=mysqli_fetch_array($result)){
+echo $row['username'].'-'.$row['password'];
+echo '<br>';
+}*/
+/*if($row['username'] == $fname && $row['password'] == $fpassword ) {
+  session_start();
+  $_SESSION['user']=1;
+header ("Location: HomePage.php");
+}
+if(!isset($_SESSION['user'])){
+header("Location: signUp.php");
+exit();
+  }
+*/
+//check that the table exists by printing the contents – for testing purposes only!
+//$query="SELECT * FROM admin1";
+ob_end_flush();
+?>
+
+
+styleSheetWebDevCW.css
+<!--Global Style Sheet-->
+.navbar { margin-bottom: 50px;}
+.navbar li:hover { border-bottom: 1px solid lightblue; padding-top:4px;}
+
+.jumbotron { background-image:url(./o-MEDITATION-facebook1.jpg); background-position: 0% 35%; background-size: cover; background-repeat: no-repeat; margin-bottom: 0;}
+
+.text-center {text-align:center; margin-right:25%; margin-left:25%;}
+
+table, tr, td, th {margin-left:10%; margin-right:10%; border:1px solid black; border-collapse:collapse; padding:10px;}
+table {border-radius;}
+tr:nth-of-type(even){background-color:lightgray;}
+
+label { padding:2%; width:40%; display:inline-block; text-align:left; font-weight:bold; float:left; clear:left; }
+input { padding:2%; width:100%; display:inline-block; text-align:left; font-weight:bold; float:left; clear:left; }
+
+textarea { margin-bottom:10px; padding:2%; width:100%; display:inline-block; text-align:left; font-weight:bold; float:left; clear:left; }
+
+select { padding:2%; width:100%; display:inline-block; text-align:left; font-weight:bold; float:left; clear:left; }
+
+/*div.question button { padding:2%; width:100%; display:inline-block; text-align:left; font-weight:bold; float:left; clear:left; }
+*/
+form p { padding:2%; width:40%; display:inline-block; text-align:left; font-weight:bold; float:left; clear:left; }
+
+.labelTitle {font-size:18px; margin-top:10px;}
+
+form h2 { text-align:center; }
+
+.chooseAnswer { display:center; margin:2%;}
+
+.bigTitle {background:radial-gradient(white, lightblue); border-radius:10px; margin-left:10%; margin-right:10%; text-align:center; background-color:rgba(0,0,255,0.3); padding:2%; border-right:2%;}
+
+.quiz {list-style: none;}
+
+.asterisk {color:red;}
+
+.reqText {font-size:12px; color:red;}
+
+#confirmation {margin:20%;}
+
+.footer{ position:absolute; width:100%; border-radius:25px; color:white; text-align:center; background-color:black; height:150px;  }
+.opaqueTitle{background-color:rgba(0,0,255,0.2); margin-right:67%; border-radius:5px;}
+.funButtons {background-color:green; border-radius:2px; font-size:20px; color:white; text-decoration:none;}
+.pics {margin-right:10%; margin-left:10%; padding:10%; text-align:center;}
+#totalTime{text-align:center;}

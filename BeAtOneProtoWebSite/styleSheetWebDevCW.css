@@ -1,0 +1,46 @@
+
+
+
+.navbar { margin-bottom: 50px;}
+.navbar li:hover { border-bottom: 1px solid lightblue; padding-top:4px;}
+
+.jumbotron { background-image:url(./o-MEDITATION-facebook1.jpg); background-position: 0% 35%; background-size: cover; background-repeat: no-repeat; margin-bottom: 0;}
+
+.text-center {text-align:center; margin-right:25%; margin-left:25%;}
+
+table, tr, td, th {margin-left:10%; margin-right:10%; border:1px solid black; border-collapse:collapse; padding:10px;}
+table {border-radius;}
+tr:nth-of-type(even){background-color:lightgray;}
+
+label { padding:2%; width:40%; display:inline-block; text-align:left; font-weight:bold; float:left; clear:left; }
+input { padding:2%; width:100%; display:inline-block; text-align:left; font-weight:bold; float:left; clear:left; }
+
+textarea { margin-bottom:10px; padding:2%; width:100%; display:inline-block; text-align:left; font-weight:bold; float:left; clear:left; }
+
+select { padding:2%; width:100%; display:inline-block; text-align:left; font-weight:bold; float:left; clear:left; }
+
+/*div.question button { padding:2%; width:100%; display:inline-block; text-align:left; font-weight:bold; float:left; clear:left; }
+*/
+form p { padding:2%; width:40%; display:inline-block; text-align:left; font-weight:bold; float:left; clear:left; }
+
+.labelTitle {font-size:18px; margin-top:10px;}
+
+form h2 { text-align:center; }
+
+.chooseAnswer { display:center; margin:2%;}
+
+.bigTitle {background:radial-gradient(white, lightblue); border-radius:10px; margin-left:10%; margin-right:10%; text-align:center; background-color:rgba(0,0,255,0.3); padding:2%; border-right:2%;}
+
+.quiz {list-style: none;}
+
+.asterisk {color:red;}
+
+.reqText {font-size:12px; color:red;}
+
+#confirmation {margin:20%;}
+
+.footer{ position:absolute; width:100%; border-radius:25px; color:white; text-align:center; background-color:black; height:150px;  }
+.opaqueTitle{background-color:rgba(0,0,255,0.2); margin-right:67%; border-radius:5px;}
+.funButtons {background-color:green; border-radius:2px; font-size:20px; color:white; text-decoration:none;}
+.pics {margin-right:10%; margin-left:10%; padding:10%; text-align:center;}
+#totalTime{text-align:center;}
